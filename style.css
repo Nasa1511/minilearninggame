@@ -66,7 +66,7 @@ section {
  }
 
  .quiz-container { 
-   min-height: 70vh;  
+   min-height: 60vh;  
    display: flex;  
    justify-content: center;  
    align-items: center;
@@ -74,8 +74,8 @@ section {
   
   .quiz-card {
     background-color: white;
-    width: 500px;
-    padding: 250px;
+    width: 80vw;
+    padding: 20px;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
