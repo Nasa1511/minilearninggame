@@ -1,0 +1,95 @@
+/* Grundlegendes Layout */body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+section {
+  padding: 20px;
+}
+.gallery {
+  display: flex;
+  justify-content: space-around;
+}
+.gallery img {
+  width: 30vw;
+  height: auto;
+  margin: 10px;
+}
+.video {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+
+}
+/* Responsive Design: Smartphone (max-width: 600px) */@media screen and (max-width: 600px) {
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery img {
+    width: 60%;
+    height: auto;
+    }
+}
+ footer {
+    background-color: #333;
+  color: rgb(231, 182, 225);
+  padding: 83px;
+
+  text-align: center;
+ }
+
+ .quiz-container { 
+   min-height: 70vh;  
+   display: flex;  
+   justify-content: center;  
+   align-items: center;
+  }
+  
+  .quiz-card {
+    background-color: white;
+    width: 500px;
+    padding: 250px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .quiz-card input {
+    width: 90%;
+    padding: 10px;
+    margin: 15px 0;
+  }
+  
+  .quiz-card button {
+    padding: 20px 30px;
+    cursor: pointer;
+  }
+  #ausgabe {
+    font-weight: bold;}
