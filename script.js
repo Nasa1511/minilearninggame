@@ -147,28 +147,3 @@ localStorage.setItem ("complex", json);
 var com = JSON.parse (localStorage.getItem ("complex")); 
 console.log (com);
 
-// 1. Deine Fragen eintragen
-const fragen = ["Frage 1?", "Frage 2?", "Frage 3?", "Frage 4?", "Frage 5?", "Frage 6?", "Frage 7?", "Frage 8?", "Frage 9?"];
-let i = 0;
-
-const zaehler = document.getElementById('frage-zaehler');
-const text = document.getElementById('frage-text');
-const btn = document.getElementById('weiter-btn');
-
-// 2. Funktion zeigt Frage und Zähler (z.B. 1/9)
-function zeige() {
-    zaehler.innerText = `Frage: ${i + 1}/${fragen.length}`;
-    text.innerText = fragen[i];
-}
-
-// 3. Klick springt eine Frage weiter
-btn.addEventListener('click', () => {
-    if (i < fragen.length - 1) {
-        i++;
-        zeige();
-    } else {
-        alert("Quiz fertig!");
-    }
-});
-
-zeige(); // Start
