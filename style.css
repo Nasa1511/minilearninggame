@@ -74,8 +74,9 @@ section {
   
   .quiz-card {
     background-color: white;
-    width: 80vw;
-    padding: 20px;
+    width: 50vw;
+    padding: 100px;
+    height: 27vh;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -88,7 +89,7 @@ section {
   }
   
   .quiz-card button {
-    padding: 20px 30px;
+    padding: 20px 300px;
     cursor: pointer;
   }
   #ausgabe {
