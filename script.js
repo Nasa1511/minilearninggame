@@ -140,3 +140,53 @@ document.getElementById("QuestionButton").style.display = "none";
 
 }
 
+// String in localStorage speichern
+localStorage.setItem ("complex", json);                  
+
+// Auslesen 
+var com = JSON.parse (localStorage.getItem ("complex")); 
+console.log (com);
+
+let fragen = [];
+let index = 0;
+
+const zaehler = document.getElementById('frage-zaehler');
+const text = document.getElementById('frage-text');
+const btnWeiter = document.getElementById('weiter-btn');
+
+// Funktion zum Aktualisieren der Anzeige
+function zeigeFrage() {
+    if (fragen.length > 0) {
+        zaehler.innerText = `Frage: ${index + 1}/${fragen.length}`;
+        text.innerText = fragen[index];
+        btnWeiter.disabled = false;
+    }
+}
+
+// Event: Fragen aus Textfeld importieren (Zeile für Zeile)
+document.getElementById('import-btn')?.addEventListener('click', () => {
+    const input = document.getElementById('import-text').value.trim();
+    if (!input) return alert("Bitte Fragen eingeben!");
+    
+    fragen = input.split('\n').filter(line => line.trim() !== "");
+    index = 0;
+    zeigeFrage();
+});
+
+// Event: Weiter-Button klicken
+btnWeiter?.addEventListener('click', () => {
+    if (index < fragen.length - 1) {
+        index++;
+        zeigeFrage();
+    } else {
+        alert("Fertig!");
+        btnWeiter.disabled = true;
+    }
+});
+
+
+
+
+
+
+
