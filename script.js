@@ -1,5 +1,7 @@
 console.log("Mein MLG funktioniert!");
 
+
+
 let computerfragen = [{
 
     frage : "Wer hat Romeo und Julia geschrieben?",
@@ -123,7 +125,20 @@ document.getElementById("frageHeadline").textContent = "Frage " + (aktuelleFrage
  
 document.getElementById("ausgabe").innerText = "";
 
+
+
 }
+
+
+
+
+let  = 1;
+const  gesamtFragen = 9;
+
+const zaehlerElement = document.getElementById('frage-zaehler');
+
+
+
 
 
 
@@ -139,4 +154,25 @@ document.getElementById("spielerEingabe").style.display="none"
 document.getElementById("QuestionButton").style.display = "none";
 
 }
+
+
+// String in localStorage speichern
+localStorage.setItem ("complex", json);                  
+
+// Auslesen 
+var com = JSON.parse (localStorage.getItem ("complex")); 
+console.log (com);
+
+
+
+
+let fragen = [];
+let index = 0;
+
+const zaehler = document.getElementById('frage-zaehler');
+const text = document.getElementById('frage-text');
+const btnWeiter = document.getElementById('weiter-btn');
+
+
+
 
