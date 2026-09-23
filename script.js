@@ -155,7 +155,6 @@ document.getElementById("QuestionButton").style.display = "none";
 
 }
 
-
 // String in localStorage speichern
 localStorage.setItem ("complex", json);                  
 
