@@ -4,28 +4,28 @@ console.log("Mein MLG funktioniert!");
 
 let computerfragen = [{
 
-    frage : "Wer hat Romeo und Julia geschrieben?",
+    frage: "Wer hat Romeo und Julia geschrieben?",
     loesung: "Shakespeare"
-    
-    
+
+
 },
 {
     frage: "In welchen Jahr begann die Französische Revolution mit dem Sturm auf die Bastille?",
-    loesung: "1789"  
-    
+    loesung: "1789"
+
 },
 {
-    frage : "Ein Polluver kostet regulär 150 Euro und wird um 20% im Preis reduziert. Wie hoch ist der Rabtt in Euro?",
+    frage: "Ein Polluver kostet regulär 150 Euro und wird um 20% im Preis reduziert. Wie hoch ist der Rabtt in Euro?",
     loesung: "30 euro"
 }
-,{  
+    , {
     frage: "Mit welcher Fragewort-Probe ermittelt man im Deutschen den Genetiv?",
     loesung: "Wessen"
 },
 
 {
-   
-     frage: "In welche drei Stände war die Gesellschaft vor der Revolution aufgeteilt?",
+
+    frage: "In welche drei Stände war die Gesellschaft vor der Revolution aufgeteilt?",
     loesung: "1.Klerus 2.Adel 3.Bürger und Bauer"
 },
 {
@@ -47,46 +47,62 @@ let computerfragen = [{
 ];
 
 let aktuelleFrage = Number.parseInt(localStorage.getItem("aktuelleFrage")) ?? 0;
-document.getElementById("frage").innerHTML =
-"<b>" + computerfragen[aktuelleFrage].frage + "</b>";
-document.getElementById("frageHeadline").textContent = "Frage " + (aktuelleFrage + 1); 
+const gesamtFragen = 9;
 
-document.getElementById("frage-zaehler").textContent = "Frage: " + (aktuelleFrage + 1) + "/9";
+if (aktuelleFrage == computerfragen.length) {
+
+    document.getElementById("frageHeadline").textContent = "Gewonnen";
+
+    document.getElementById("frage").innerText = "Quiz beendet!";
+
+    document.getElementById("spielerEingabe").style.display = "none"
+
+    document.getElementById("QuestionButton").style.display = "none";
+
+    document.getElementById("frage-zaehler").textContent = "Frage: 9/9";
+
+
+} else {
+    document.getElementById("frage").innerHTML =
+        "<b>" + computerfragen[aktuelleFrage].frage + "</b>";
+    document.getElementById("frageHeadline").textContent = "Frage " + (aktuelleFrage + 1);
+
+    document.getElementById("frage-zaehler").textContent = "Frage: " + (aktuelleFrage + 1) + "/9";
+
+}
 
 
 
-
-
-let weiterButton = 
- document.getElementById("QuestionButton");
- weiterButton.addEventListener("click", function() {
-  raten();
+let weiterButton =
+    document.getElementById("QuestionButton");
+weiterButton.addEventListener("click", function () {
+    raten();
 });
 
 function raten() {
 
-  let spielerEingabe =
-  document.getElementById("spielerEingabe").value;
-  
-  let ausgabe =
-document.getElementById("ausgabe");
-  
-if (
- spielerEingabe.toLowerCase() ==
-   computerfragen[aktuelleFrage].loesung.toLowerCase()
-  ) {
-    
- ausgabe.innerText = "Richtig";
- 
-  aktuelleFrage++; 
-  
-   zeigeFrage(); 
- 
-} else {
-    
-    ausgabe.innerText = "Falsch"; 
+    let spielerEingabe =
+        document.getElementById("spielerEingabe").value;
 
-}
+    let ausgabe =
+        document.getElementById("ausgabe");
+
+    if (
+        spielerEingabe.toLowerCase() ==
+        computerfragen[aktuelleFrage].loesung.toLowerCase()
+    ) {
+
+        ausgabe.innerText = "Richtig";
+
+        aktuelleFrage++;
+
+        zeigeFrage();
+
+    } else {
+
+        ausgabe.innerText = "Falsch";
+
+    }
 
 }
 
@@ -94,51 +110,36 @@ if (
 
 
 function zeigeFrage() {
-    
-document.getElementById("frage").innerHTML =
- "<b>" + computerfragen[aktuelleFrage].frage + "</b>";
+    if (aktuelleFrage == computerfragen.length) {
 
- 
-document.getElementById("frageHeadline").textContent = "Frage " + (aktuelleFrage + 1);
+        document.getElementById("frage").innerText = "Quiz beendet!";
 
-document.getElementById("frage-zaehler").textContent = "Frage: " + (aktuelleFrage + 1) + "/9";
- 
- document.getElementById("spielerEingabe").value = ""; 
- 
- 
-document.getElementById("ausgabe").innerText = "";
+        document.getElementById("spielerEingabe").style.display = "none"
 
-localStorage.setItem ("aktuelleFrage", aktuelleFrage);       
+        document.getElementById("QuestionButton").style.display = "none";
+
+
+    } else {
+
+        document.getElementById("frage").innerHTML =
+            "<b>" + computerfragen[aktuelleFrage].frage + "</b>";
+
+
+        document.getElementById("frageHeadline").textContent = "Frage " + (aktuelleFrage + 1);
+
+        document.getElementById("frage-zaehler").textContent = "Frage: " + (aktuelleFrage + 1) + "/9";
+
+        document.getElementById("spielerEingabe").value = "";
+
+
+        document.getElementById("ausgabe").innerText = "";
+
+    }
+
+    localStorage.setItem("aktuelleFrage", aktuelleFrage);
+
 
 }
-
-
-
-
-let  = 1;
-const  gesamtFragen = 9;
-
-const zaehlerElement = document.getElementById('frage-zaehler');
-
-
-
-
-
-
-
-if (aktuelleFrage > computerfragen.length) {
-
-zeigeFrage();
-
-document.getElementById("frage9").innerText="Quiz beendet!";
-
-document.getElementById("spielerEingabe").style.display="none"
-
-document.getElementById("QuestionButton").style.display = "none";
-
-           
-}
-
 
 
 
