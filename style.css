@@ -58,9 +58,9 @@ section {
     }
 }
  footer {
-    background-color: #131111;
+    background-color: #413f3f;
   color: rgb(231, 182, 225);
-  padding: 83px;
+  padding: 150px;
 
   text-align: center;
  }
@@ -74,7 +74,7 @@ section {
   
   .quiz-card {
     background-color: white;
-    width: 50vw;
+    width: 40vw;
     padding: 100px;
     height: 27vh;
     border-radius: 15px;
@@ -83,13 +83,13 @@ section {
   }
   
   .quiz-card input {
-    width: 90%;
+    width: 60%;
     padding: 10px;
     margin: 15px 0;
   }
   
   .quiz-card button {
-    padding: 20px 300px;
+    padding: 20px 30px;
     cursor: pointer;
   }
   #ausgabe {
