@@ -140,10 +140,3 @@ document.getElementById("QuestionButton").style.display = "none";
 
 }
 
-// String in localStorage speichern
-localStorage.setItem ("complex", json);                  
-
-// Auslesen 
-var com = JSON.parse (localStorage.getItem ("complex")); 
-console.log (com);
-
