@@ -46,41 +46,22 @@ let computerfragen = [{
 },
 ];
 
-let aktuelleFrage = 0;
+let aktuelleFrage = Number.parseInt(localStorage.getItem("aktuelleFrage")) ?? 0;
 document.getElementById("frage").innerHTML =
 "<b>" + computerfragen[aktuelleFrage].frage + "</b>";
+document.getElementById("frageHeadline").textContent = "Frage " + (aktuelleFrage + 1); 
 
-document.getElementById("frageHeadline").textContent = "Frage " + (aktuelleFrage + 1);
+document.getElementById("frage-zaehler").textContent = "Frage: " + (aktuelleFrage + 1) + "/9";
+
+
+
+
 
 let weiterButton = 
  document.getElementById("QuestionButton");
  weiterButton.addEventListener("click", function() {
   raten();
 });
-
-
-function raten() {
-
-  let spielerEingabe =
- document.getElementById("spielerEingabe").value;
- 
- let ausgabe =
- document.getElementById("ausgabe");
-
-
- if ( 
-spielerEingabe.toLowerCase() ==
-  computerfragen[aktuelleFrage].loesung.toLowerCase()
-  ) {
-    
- ausgabe.innerText = "Richtig";
-  } else {
-
- ausgabe.innerText = "Falsch";
-
-}
-
-}
 
 function raten() {
 
@@ -119,13 +100,15 @@ document.getElementById("frage").innerHTML =
 
  
 document.getElementById("frageHeadline").textContent = "Frage " + (aktuelleFrage + 1);
+
+document.getElementById("frage-zaehler").textContent = "Frage: " + (aktuelleFrage + 1) + "/9";
  
  document.getElementById("spielerEingabe").value = ""; 
  
  
 document.getElementById("ausgabe").innerText = "";
 
-
+localStorage.setItem ("aktuelleFrage", aktuelleFrage);       
 
 }
 
@@ -147,20 +130,14 @@ if (aktuelleFrage > computerfragen.length) {
 
 zeigeFrage();
 
-document.getElementById("frage").innerText="Quiz beendet!";
+document.getElementById("frage9").innerText="Quiz beendet!";
 
 document.getElementById("spielerEingabe").style.display="none"
 
 document.getElementById("QuestionButton").style.display = "none";
 
+           
 }
-
-// String in localStorage speichern
-localStorage.setItem ("complex", json);                  
-
-// Auslesen 
-var com = JSON.parse (localStorage.getItem ("complex")); 
-console.log (com);
 
 
 
