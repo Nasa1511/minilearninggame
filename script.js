@@ -49,20 +49,29 @@ let computerfragen = [{
 let aktuelleFrage = Number.parseInt(localStorage.getItem("aktuelleFrage")) ?? 0;
 const gesamtFragen = 9;
 
+
+
+
 if (aktuelleFrage == computerfragen.length) {
+
+let aktuelleFrage = Number.parseInt(localStorage.getItem("aktuelleFrage")) ?? 0;
+const gesamtFragen = 9;
 
     document.getElementById("frageHeadline").textContent = "Gewonnen";
 
     document.getElementById("frage").innerText = "Quiz beendet!";
 
-    document.getElementById("spielerEingabe").style.display = "none"
+    document.getElementById("spielerEingabe").style.display = "none";
 
     document.getElementById("QuestionButton").style.display = "none";
 
     document.getElementById("frage-zaehler").textContent = "Frage: 9/9";
 
+   
+    
 
 } else {
+  
     document.getElementById("frage").innerHTML =
         "<b>" + computerfragen[aktuelleFrage].frage + "</b>";
     document.getElementById("frageHeadline").textContent = "Frage " + (aktuelleFrage + 1);
@@ -71,14 +80,31 @@ if (aktuelleFrage == computerfragen.length) {
 
 }
 
-
-
 let weiterButton =
     document.getElementById("QuestionButton");
 weiterButton.addEventListener("click", function () {
     raten();
+
 });
 
+let nochmalButton = 
+    document.getElementById("AgainButton");
+    nochmalButton.addEventListener("click", function () {
+aktuelleFrage = 0;
+
+    document.getElementById("AgainButton").innerText = "Nochmal" + (aktuelleFrage  + 1 ) 
+    
+    document.getElementById("frage").innerHTML =
+        "<b>" + computerfragen[aktuelleFrage].frage + "</b>";
+    document.getElementById("frageHeadline").textContent = "Frage " + (aktuelleFrage + 1);
+
+    document.getElementById("frage-zaehler").textContent = "Frage: " + (aktuelleFrage + 1) + "/9";
+
+        document.getElementById("spielerEingabe").style.display = "block";
+
+    document.getElementById("QuestionButton").style.display = "block";
+
+    })
 function raten() {
 
     let spielerEingabe =
@@ -118,6 +144,7 @@ function zeigeFrage() {
 
         document.getElementById("QuestionButton").style.display = "none";
 
+        document.getElementById("againButton").innerText = "Nochmal" + (aktuelleFrage + 1) + "Button"
 
     } else {
 
@@ -149,7 +176,4 @@ let index = 0;
 const zaehler = document.getElementById('frage-zaehler');
 const text = document.getElementById('frage-text');
 const btnWeiter = document.getElementById('weiter-btn');
-
-
-
-
+const btnNochmal = document.getElementById('again-btn');
