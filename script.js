@@ -92,7 +92,7 @@ let nochmalButton =
     nochmalButton.addEventListener("click", function () {
 aktuelleFrage = 0;
 
-    document.getElementById("AgainButton").innerText = "Nochmal" + (aktuelleFrage  + 1 ) 
+    document.getElementById("AgainButton").innerText = "Nochmal" + aktuelleFrage  
     
     document.getElementById("frage").innerHTML =
         "<b>" + computerfragen[aktuelleFrage].frage + "</b>";
@@ -144,7 +144,7 @@ function zeigeFrage() {
 
         document.getElementById("QuestionButton").style.display = "none";
 
-        document.getElementById("againButton").innerText = "Nochmal" + (aktuelleFrage + 1) + "Button"
+        document.getElementById("againButton").innerText = "Nochmal" + (aktuelleFrage  + 1)  + "Button"
 
     } else {
 
