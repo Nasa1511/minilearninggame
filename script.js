@@ -46,16 +46,13 @@ let computerfragen = [{
 },
 ];
 
-let aktuelleFrage = Number.parseInt(localStorage.getItem("aktuelleFrage")) ?? 0;
+let aktuelleFrage = Number.parseInt(localStorage.getItem("aktuelleFrage") ?? 0);
 const gesamtFragen = 9;
 
 
 
 
 if (aktuelleFrage == computerfragen.length) {
-
-let aktuelleFrage = Number.parseInt(localStorage.getItem("aktuelleFrage")) ?? 0;
-const gesamtFragen = 9;
 
     document.getElementById("frageHeadline").textContent = "Gewonnen";
 
