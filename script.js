@@ -88,8 +88,6 @@ let nochmalButton =
     document.getElementById("AgainButton");
     nochmalButton.addEventListener("click", function () {
 aktuelleFrage = 0;
-
-    document.getElementById("AgainButton").innerText = "Nochmal" + aktuelleFrage  
     
     document.getElementById("frage").innerHTML =
         "<b>" + computerfragen[aktuelleFrage].frage + "</b>";
